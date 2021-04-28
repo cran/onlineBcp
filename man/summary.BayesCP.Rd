@@ -4,10 +4,12 @@
 \alias{summary.BayesCP}
 \title{Summarize BayesCP object}
 \usage{
-\method{summary}{BayesCP}(object, ...)
+\method{summary}{BayesCP}(object, norm.test = FALSE, ...)
 }
 \arguments{
 \item{object}{the BayesCP class object to be summarized}
+
+\item{norm.test}{logical value for normality test, default is false}
 
 \item{...}{parameters passed to summary()}
 }

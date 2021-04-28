@@ -1,7 +1,7 @@
-1160e28b43c0b4c82a7b15bdc1eb0599 *DESCRIPTION
+b1f29399f6449c660d7acabfb213ff7b *DESCRIPTION
 d5eae44e30a0af8b9c5170cd94823e10 *NAMESPACE
 3b70e9a6fa3fb23b736f6bd8f1e4bdf2 *R/data.R
-3c77bee1c73bfa6b10ee9d05508f18b8 *R/online_cp.R
+10a2e5fbd00e79ebe2deb0dce57b80a8 *R/online_cp.R
 47291840eb4c7bab0cb6e624ef9a2d17 *data/aCGH.rda
 fd95b076ebbdccf7f8784a54687b76d0 *data/cnv_H2347.rda
 32735ae3b8e08b7042aa478818a73292 *data/covid.rda
@@ -11,6 +11,6 @@ d3b013d48121d1c7db090c7faf8e7457 *man/cnv_H2347.Rd
 4d71fb7d6def11d763d29b80ee27fabb *man/imputation.Rd
 351df999ec426470cd00e1c6d8d7e93b *man/online_cp.Rd
 3ef805e26c6f7c460ff8c240a4a2f36c *man/plot.BayesCP.Rd
-3632ad8e96eaef6c5ca8152749a1c737 *man/summary.BayesCP.Rd
+61098b7e560e7007423380ab23a341c4 *man/summary.BayesCP.Rd
 13be652490dd79a47ba1a1bed5b5e079 *tests/testthat.R
 15bb810cc9c789d1f45db8b8ecadef5a *tests/testthat/test-online_cp.R

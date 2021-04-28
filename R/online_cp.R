@@ -198,6 +198,7 @@ plot.BayesCP <-  function(x, xlab = "Index", ylab = "x", ...) {
 #' Summarize BayesCP object
 #'
 #' @param object the BayesCP class object to be summarized
+#' @param norm.test logical value for normality test, default is false
 #' @param ... parameters passed to summary()
 #' @return The summary of the BayesCP class in a list
 #' @export
@@ -206,7 +207,7 @@ plot.BayesCP <-  function(x, xlab = "Index", ylab = "x", ...) {
 #' bcp <- online_cp(x)
 #' summary(bcp)
 
-summary.BayesCP <- function(object, ...){
+summary.BayesCP <- function(object, norm.test = FALSE, ...){
   bcp <- object
   x <- bcp$x
   max_p <- bcp$max_p
@@ -278,13 +279,20 @@ summary.BayesCP <- function(object, ...){
 
     n_=length(ta_1)
 
-    norm.res <- ks.test(x, "pnorm", mean = mean(x), sd = sd(x))
-
-    se_result=data.frame(1, n, "no cp", mean(x), sqrt(var(x)),
+    if(norm.test) {
+      norm.res <- ks.test(x, "pnorm", mean = mean(x), sd = sd(x))
+      se_result=data.frame(1, n, "no cp", mean(x), sqrt(var(x)),
                          (mean(x)-sqrt(var(x)/n)*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE)),
                          (mean(x)+sqrt(var(x)/n)*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE)), norm.res$p.value)
+      names(se_result)=c("begin", "end","no cp" ,"mean", "SD", "LL of CI", "UL of CI", "normality p-value")
+    }
+    else {
+      se_result=data.frame(1, n, "no cp", mean(x), sqrt(var(x)),
+                           (mean(x)-sqrt(var(x)/n)*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE)),
+                           (mean(x)+sqrt(var(x)/n)*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE)))
+      names(se_result)=c("begin", "end","no cp" ,"mean", "SD", "LL of CI", "UL of CI")
 
-    names(se_result)=c("begin", "end","no cp" ,"mean", "SD", "LL of CI", "UL of CI", "normality p-value")
+    }
     changepoint <- "This is no change points."
     res <- list(changepoint = changepoint, segments = se_result)
 
@@ -326,8 +334,15 @@ summary.BayesCP <- function(object, ...){
 
     k_ <- length(yc)
 
-    se_result=array(0, dim=c(k_, 8))
-    colnames(se_result)=c("begin", "end","post. prob." ,"mean", "SD", "LL of CI", "UL of CI", "normality p-value")
+    if(norm.test){
+      se_result=array(0, dim=c(k_, 8))
+      colnames(se_result)=c("begin", "end","post. prob." ,"mean", "SD", "LL of CI", "UL of CI", "normality p-value")
+    }
+    else {
+      se_result=array(0, dim=c(k_, 7))
+      colnames(se_result)=c("begin", "end","post. prob." ,"mean", "SD", "LL of CI", "UL of CI")
+
+    }
 
     for (i in 1:k_) {
 
@@ -337,9 +352,14 @@ summary.BayesCP <- function(object, ...){
       seg_mean=mean(yc[[i]]); seg_SD=sd(yc[[i]], na.rm = TRUE);
       LL_of_CI=(mean(yc[[i]])-sqrt(var(yc[[i]])/length(yc[[i]]))*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE))
       UL_of_CI= (mean(yc[[i]])+sqrt(var(yc[[i]])/length(yc[[i]]))*qnorm(0.05, mean = 0, sd = 1, lower.tail = FALSE, log.p = FALSE))
-      norm.res <- ks.test(yc[[i]], "pnorm", mean = seg_mean, sd = seg_SD)
+      if(norm.test) {
+        norm.res <- ks.test(yc[[i]], "pnorm", mean = seg_mean, sd = seg_SD)
+        se_result[i,]=c(begin_, end_, post_prob, seg_mean, seg_SD, LL_of_CI, UL_of_CI, norm.res$p.value)
+      }
+      else {
+        se_result[i,]=c(begin_, end_, post_prob, seg_mean, seg_SD, LL_of_CI, UL_of_CI)
 
-      se_result[i,]=c(begin_, end_, post_prob, seg_mean, seg_SD, LL_of_CI, UL_of_CI, norm.res$p.value)
+      }
 
     }
     # take the results for change points out
