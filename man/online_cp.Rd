@@ -10,13 +10,13 @@ online_cp(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5)
 \arguments{
 \item{x}{the normalized data}
 
-\item{theta}{the probability of occurrence of a change point}
+\item{theta}{the probability of occurrence of a change point, default 0.9}
 
-\item{alpha}{the hyperparameter of posterior distribution}
+\item{alpha}{the hyperparameter of posterior distribution, default 1.0}
 
-\item{beta}{the hyperparameter of posterior distribution}
+\item{beta}{the hyperparameter of posterior distribution, default 1.0}
 
-\item{th_cp}{threshold level for the posterior distribution of change point}
+\item{th_cp}{threshold level for the posterior distribution of change point, default 0.5}
 }
 \value{
 An object of the BayesCP class

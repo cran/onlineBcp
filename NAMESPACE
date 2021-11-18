@@ -2,6 +2,7 @@
 
 S3method(plot,BayesCP)
 S3method(summary,BayesCP)
+export(combine)
 export(imputation)
 export(online_cp)
 importFrom(graphics,lines)

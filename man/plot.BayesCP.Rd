@@ -9,9 +9,9 @@
 \arguments{
 \item{x}{the BayesCP class object to be plotted}
 
-\item{xlab}{the default x-axis label}
+\item{xlab}{the default x-axis label, default "Index"}
 
-\item{ylab}{the default y-axis label}
+\item{ylab}{the default y-axis label, default "x"}
 
 \item{...}{the plotting parameters passed to plot()}
 }

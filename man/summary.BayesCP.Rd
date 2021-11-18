@@ -14,7 +14,7 @@
 \item{...}{parameters passed to summary()}
 }
 \value{
-The summary of the BayesCP class in a list
+An object of BayesCP class with updated summary result
 }
 \description{
 Summarize BayesCP object
