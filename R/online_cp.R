@@ -154,7 +154,7 @@ summary.BayesCP <- function(object, norm.test = FALSE, ...){
   max_p <- bcp$max_p
   th_cp <- bcp$parameters["th_cp"]
 
-  if(is.null(bcp$result) || (bcp$series_length ==1 & dim(bcp$result$segment)[2] == 6 && norm.test) || (bcp$series_length == 1 & dim(bcp$result$segment)[2] == 7 && !norm.test)) {  ## no result yet, do the summary, or change of normality test status
+  if(is.null(bcp$result) || (length(bcp$series_length) == 1 && dim(bcp$result$segment)[2] == 6 && norm.test) || (length(bcp$series_length) == 1 && dim(bcp$result$segment)[2] == 7 && !norm.test)) {  ## no result yet, do the summary, or change of normality test status
 
     ## Calculate mean, SD, CI for each segments
 
