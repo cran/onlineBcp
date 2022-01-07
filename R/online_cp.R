@@ -7,6 +7,7 @@
 #' @param alpha the hyperparameter of posterior distribution, default 1.0
 #' @param beta the hyperparameter of posterior distribution, default 1.0
 #' @param th_cp threshold level for the posterior distribution of change point, default 0.5
+#' @param debug a logical value, when TRUE, will print more information
 #   alpha: 1                                                      #
 #   beta: (0.5, 1)                                                #
 #   th_cp: threshold level for the posterior distribution of      #
@@ -17,7 +18,7 @@
 
 #' @return An object of the BayesCP class
 #' @export
-online_cp <- function(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5) {
+online_cp <- function(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5, debug = FALSE) {
   n=length(x)
 
   # theta=0.90; 		    		        # theta=(1-H)-> H=0.10 hazard function is taken to be geometric or exponential with theta
@@ -33,7 +34,7 @@ online_cp <- function(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5) {
 
     j=tau; 								        # it is required for 2nd loop "while (j<=t)"
 
-    if(t %% 100 == 0) cat("processing data point ",t,"\n")
+    if(debug && t %% 100 == 0) cat("processing data point ",t,"\n")
 
     w1=array(0,dim=c(t))          #
 
@@ -391,6 +392,18 @@ imputation <- function(x, method= c("Median", "kNN")) {
   return(x)
 }
 
+#' Add one data point
+#' @param bcp, current BayesCP object
+#' @param d, additional data point to be added to the existing data
+#'
+#' @return  a vector with new data point appended
+#' @export
+#'
+addDatapoint <- function(bcp, d){
+  if(!is.numeric(d)) stop("Please add numeric value!")
+  x <- bcp$x
+  c(x, d)
+}
 
 #' Combine two BayesCP objects
 #'

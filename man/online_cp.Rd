@@ -5,7 +5,7 @@
 \title{Online change point detection algorithm
       for normally distributed data.}
 \usage{
-online_cp(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5)
+online_cp(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5, debug = FALSE)
 }
 \arguments{
 \item{x}{the normalized data}
@@ -17,6 +17,8 @@ online_cp(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5)
 \item{beta}{the hyperparameter of posterior distribution, default 1.0}
 
 \item{th_cp}{threshold level for the posterior distribution of change point, default 0.5}
+
+\item{debug}{a logical value, when TRUE, will print more information}
 }
 \value{
 An object of the BayesCP class
