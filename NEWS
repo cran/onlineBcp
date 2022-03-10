@@ -3,6 +3,16 @@ onliineBcp v0.1.4 (Release date: 2021-12-28)
 
 Changes:
 
+* Add link CRAN in documents
+
+
+
+
+onliineBcp v0.1.4 (Release date: 2021-12-28)
+==============
+
+Changes:
+
 * Add function to add data points to existing data
 * Supressing message when running
 
