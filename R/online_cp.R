@@ -61,7 +61,7 @@ online_cp <- function(x, theta = 0.9, alpha = 1, beta = 1, th_cp = 0.5, debug = 
         p_cs[j+1]=w1[j+1]*(theta)*p_ct[j+1]
       }
       else {
-        w2=((2^alpha)*gamma(us3))/(sqrt(2*pi)*(a3+beta)^us3)
+        w2=((2^alpha)*gamma(us3))/(sqrt(2*pi)*(a3 + 2*beta)^us3)
         sum_p=sum(p_ct[1:t])
         p_cs[j+1]=w2*(1-theta)*sum_p
         # cat("p_cs", p_cs[j+1], "\n")
