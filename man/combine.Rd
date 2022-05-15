@@ -12,7 +12,7 @@ combine(bcp1, bcp2)
 \item{bcp2}{the second BayesCP opbject to be combined}
 }
 \value{
-The combined BayesCP object
+The combined BayesCP object. Notice that if bcp1 has n1 change points (n1 + 1 segments), and bcp2 has n2 change points (n2 + 1 segments), the combined bcp will have n1+n2 change points and n1+n2+2 segments.
 }
 \description{
 Combine two BayesCP objects

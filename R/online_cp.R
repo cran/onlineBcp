@@ -410,7 +410,8 @@ addDatapoint <- function(bcp, d){
 #' @param bcp1 the first BayesCP object to be combined
 #' @param bcp2 the second BayesCP opbject to be combined
 #'
-#' @return The combined BayesCP object
+#' @return The combined BayesCP object. Notice that if bcp1 has n1 change points (n1 + 1 segments), and bcp2 has n2 change points (n2 + 1 segments), the combined bcp will have n1+n2 change points and n1+n2+2 segments.
+#'
 #' @export
 combine <- function(bcp1, bcp2) {
   # BayesCP has x, max_p, parameters, series_length, and result
@@ -426,9 +427,9 @@ combine <- function(bcp1, bcp2) {
   changepoint <- rbind(res1$changepoint, res2$changepoint)
   print("here!")
 
-  print(res2$segment[,1])
+  #print(res2$segment[,1])
   res2$segment[,1] <- res2$segment[,1] + length(bcp1$x) # 1st column is the begin index of the segment
-  res2$segment[,2] <- res2$segment[,2] + length(bcp1$x) # 1st column is the end index of the segment
+  res2$segment[,2] <- res2$segment[,2] + length(bcp1$x) # 2nd column is the end index of the segment
 
 
   segment <- rbind(res1$segment, res2$segment)
