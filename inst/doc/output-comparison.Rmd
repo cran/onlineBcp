@@ -1,0 +1,32 @@
+---
+title: "A note on this update"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{output-comparison}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+library(onlineBcp)
+```
+
+A bug in version 0.1.4 is fixed in version 0.1.8 and some unclear documentations in versions 0.1.5 to 0.1.7 are updated in version 0.1.8. Due to these updates, the computational results from version 0.1.4 are slightly different from those of the current version. This document lists the side-by-side results from version 0.1.4 with the results obtained from the current version for three datasets contained in the package and note that those slightly different numerical values do not change the conclusions that there are changes detected in each dataset.
+
+
+
+![](ex1.png){#id .class width=600 height=500px}
+
+![](ex2.png){#id .class width=600 height=250px}
+
+![](ex3.png){#id .class width=600 height=500px}
+
+![](ex4.png){#id .class width=600 height=500px}
+

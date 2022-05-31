@@ -1,11 +1,15 @@
-50cfd21012ea7335c0adb38460c492c9 *DESCRIPTION
+91d3b30924d116b114ae8f15c67aaff4 *DESCRIPTION
 5db1d97da789e92ccfcd9b33033b0063 *NAMESPACE
-254f5983da00024521da13f48b1e7cda *NEWS
+79945b2446b11802aa6e7f2d65962444 *NEWS
 3b70e9a6fa3fb23b736f6bd8f1e4bdf2 *R/data.R
 d0a5bccfad30caa620b7c3db4a46de0d *R/online_cp.R
+7e636eaef935b5b6b5192bb6aaef7ecc *build/vignette.rds
 47291840eb4c7bab0cb6e624ef9a2d17 *data/aCGH.rda
 fd95b076ebbdccf7f8784a54687b76d0 *data/cnv_H2347.rda
 32735ae3b8e08b7042aa478818a73292 *data/covid.rda
+812ab3b251542cd715611da78a523e6f *inst/doc/output-comparison.R
+9a52f4145e5818c75b212e29e1ad1e80 *inst/doc/output-comparison.Rmd
+6955ebdf950bc6957d8ee7e02b6a00ee *inst/doc/output-comparison.html
 6d80d88f7d8f9764c9944b1c55a9f2ce *man/aCGH.Rd
 15eb7a64edc27f5233bfb9c80bf3a2fb *man/addDatapoint.Rd
 d3b013d48121d1c7db090c7faf8e7457 *man/cnv_H2347.Rd
@@ -17,3 +21,8 @@ ddcd88d1236652f73219202e3ded3e6b *man/combine.Rd
 e900ed2c244dfd4b60fefee711b59043 *man/summary.BayesCP.Rd
 13be652490dd79a47ba1a1bed5b5e079 *tests/testthat.R
 15bb810cc9c789d1f45db8b8ecadef5a *tests/testthat/test-online_cp.R
+bffb0f408a7a34cfc01d571d9fbebe69 *vignettes/ex1.png
+94708dcd0e18e24537a4c40618225300 *vignettes/ex2.png
+fa0662bf2b2c6c25ee7feee972f40f0b *vignettes/ex3.png
+808862af024dbf42e2cf7a6b835a3a1d *vignettes/ex4.png
+9a52f4145e5818c75b212e29e1ad1e80 *vignettes/output-comparison.Rmd

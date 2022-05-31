@@ -1,7 +1,7 @@
 Package: onlineBcp
 Type: Package
 Title: Online Bayesian Methods for Change Point Analysis
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: c(
     person("Hongyan", "Xu", email = "hxu@augusta.edu", role = c("cre", "aut")),
     person("Ayten", "Yigiter", email = "yigiter@hacettepe.edu.tr", role = "aut"),
@@ -16,12 +16,13 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
 Imports: VIM
-Suggests: testthat
+Suggests: knitr, rmarkdown, testthat
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-05-12 13:59:06 UTC; HXU
+Packaged: 2022-05-26 17:57:22 UTC; HXU
 Author: Hongyan Xu [cre, aut],
   Ayten Yigiter [aut],
   Jie Chen [aut]
 Maintainer: Hongyan Xu <hxu@augusta.edu>
 Repository: CRAN
-Date/Publication: 2022-05-15 22:10:03 UTC
+Date/Publication: 2022-05-31 13:40:02 UTC
